@@ -1,0 +1,11 @@
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { validateConfig, fingerprint, BUILD_VERSION } from '../src/simulation.js';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const data=validateConfig(JSON.parse(await readFile(path.join(root,'data/coast.json'),'utf8')));
+const dest=path.join(root,'dist');
+await rm(dest,{recursive:true,force:true});await mkdir(dest,{recursive:true});
+for(const file of ['index.html','styles.css','src','data'])await cp(path.join(root,file),path.join(dest,file),{recursive:true});
+await writeFile(path.join(dest,'build-info.json'),JSON.stringify({version:BUILD_VERSION,config_hash:fingerprint(data)},null,2)+'\n');
+console.log(`Static build ready: dist/ (${BUILD_VERSION}, rules ${fingerprint(data)})`);

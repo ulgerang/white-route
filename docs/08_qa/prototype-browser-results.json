@@ -1,0 +1,34 @@
+{
+  "mode": "offline-module-harness",
+  "renderer": "software",
+  "checks_passed": 21,
+  "checks": [
+    "app initializes with a rendered 3D scene",
+    "keyboard steering changes continuous position",
+    "pause freezes the simulation clock",
+    "accessibility settings apply in the pause dialog",
+    "keyboard works immediately after resuming",
+    "sound button does not steal gameplay keyboard focus",
+    "restart starts a clean run without loading the page",
+    "jump input produces an airborne character",
+    "route choices are shown before the selection gate",
+    "route button commits a real shorter course",
+    "start to finish to results works through normal input",
+    "retry clears progress and restores keyboard input",
+    "focus loss automatically pauses and preserves progress",
+    "slow run reaches the time-out result screen",
+    "imported replay reproduces the recorded final result",
+    "malformed replay is rejected without breaking the app",
+    "mobile start button fits the viewport",
+    "touch control panel is visible on a phone viewport",
+    "simultaneous touch steering and acceleration work",
+    "touch cancellation clears held controls",
+    "no uncaught JavaScript page errors"
+  ],
+  "page_errors": [],
+  "limitations": [
+    "Software fallback does not validate WebGL shader execution.",
+    "Synthetic input is not a human readability or real-device performance test.",
+    "Offline harness does not exercise HTTP module loading or persistent browser storage."
+  ]
+}
