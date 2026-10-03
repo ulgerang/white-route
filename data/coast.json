@@ -1,0 +1,136 @@
+{
+  "version": "coast-0.1.0",
+  "rules": {
+    "version": "arcade-0.1.0",
+    "tickRate": 60,
+    "baseSpeed": 18,
+    "fastSpeed": 26,
+    "brakeSpeed": 10,
+    "recoverySpeed": 7,
+    "acceleration": 12,
+    "braking": 22,
+    "lateralSpeed": 7.8,
+    "steeringResponse": 10,
+    "playerRadius": 0.42,
+    "playerDepth": 0.5,
+    "jumpVelocity": 10,
+    "gravity": 20,
+    "anticipationSeconds": 0.08,
+    "landingSeconds": 0.12,
+    "recoverySeconds": 1,
+    "invulnerabilitySeconds": 2,
+    "visibilityDistance": 110,
+    "nearMissDistance": 0.65,
+    "distanceScore": 0.15,
+    "clearScore": 20,
+    "fishScore": 100,
+    "supplyScore": 150,
+    "autoJumpLeadSeconds": 0.23
+  },
+  "course": {
+    "id": "CH01_SEG01",
+    "name": "푸른 해안",
+    "destination": "여명 관측 기지",
+    "length": 3200,
+    "timeLimit": 200,
+    "halfWidth": 6,
+    "lanes": [
+      -3.6,
+      0,
+      3.6
+    ],
+    "safeStart": 280,
+    "safeFinish": 240,
+    "supplyGoal": 6,
+    "defaultSeed": 260103,
+    "fork": {
+      "revealAt": 940,
+      "chooseAt": 1120,
+      "endAt": 2220,
+      "fastReduction": 200
+    },
+    "weather": {
+      "from": 2280,
+      "to": 2660,
+      "wind": 0.32
+    },
+    "tutorial": [
+      {
+        "type": "hole",
+        "z": 340,
+        "lane": 1
+      },
+      {
+        "type": "seal",
+        "z": 565,
+        "lane": 0
+      },
+      {
+        "type": "crevasse",
+        "z": 785,
+        "lane": 2
+      }
+    ],
+    "blocks": {
+      "from": 1280,
+      "to": 2800,
+      "spacing": 152
+    },
+    "patterns": [
+      {
+        "id": "CH01_SEG01_PAT01",
+        "type": "hole"
+      },
+      {
+        "id": "CH01_SEG01_PAT02",
+        "type": "seal"
+      },
+      {
+        "id": "CH01_SEG01_PAT03",
+        "type": "crevasse"
+      }
+    ]
+  },
+  "objects": {
+    "hole": {
+      "class": "HAZARD",
+      "width": 2.3,
+      "depth": 4,
+      "clearHeight": 0.3,
+      "penalty": 2,
+      "label": "얼음 구멍",
+      "cue": "좌우로 피하거나 점프"
+    },
+    "crevasse": {
+      "class": "HAZARD",
+      "width": 2.6,
+      "depth": 7,
+      "clearHeight": 0.35,
+      "penalty": 3,
+      "label": "크레바스",
+      "cue": "감속해서 점프하거나 우회"
+    },
+    "seal": {
+      "class": "HAZARD",
+      "width": 2,
+      "depth": 2.3,
+      "clearHeight": null,
+      "penalty": 1.5,
+      "amplitude": 0.7,
+      "label": "이동하는 물개",
+      "cue": "좌우로 우회 · 점프 회피 불가"
+    },
+    "fish": {
+      "class": "COLLECTIBLE",
+      "width": 0.9,
+      "depth": 1,
+      "label": "물고기"
+    },
+    "supply": {
+      "class": "COLLECTIBLE",
+      "width": 1.1,
+      "depth": 1.2,
+      "label": "보급품"
+    }
+  }
+}

@@ -1,2 +1,9 @@
 # Local-only Codex/agent configuration
 .agents/
+node_modules/
+dist/
+test-results/
+__pycache__/
+*.pyc
+*.log
+.DS_Store

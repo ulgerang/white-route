@@ -1,0 +1,18 @@
+{
+  "name": "white-route",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "WHITE ROUTE — deterministic, dependency-free WebGL coastal prototype",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "start": "node scripts/server.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/simulation.test.js tests/server.test.js",
+    "build": "node scripts/build.mjs",
+    "validate": "npm run check && npm test && npm run build"
+  }
+}
